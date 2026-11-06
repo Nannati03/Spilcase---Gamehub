@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spilkatalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="topbar"></div>
+
+    <div class="container">
+        <header>
+            <h1>Spilkataloget</h1>
+        </header>
+
+        <main>
+            <!-- Søgning -->
+             
+            <div class="search-container">
+              <span class="bi--search"></span>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder= "Søg efter spil..." 
+                    class="search-input"
+                    aria-label="Søg efter spil"
+                >
+            </div>
+            
+
+    
+    
+
+
+            <!-- Åbn filterpanelet -->
+           <a href="filter.html" id="filter-toggle" class="filter-button">
+             <span class="boxicons--filter-filled"></span>
+              <span>Filtrer</span>
+            </a>
+<!-- Sortering -->
+    <div class="sort-container">
+    <label for="sort-spil">Sortér efter:</label>
+
+    <select id="sort-spil">
+        <option value="standard">Standard</option>
+        <option value="rating">Bedst bedømte først</option>
+        <option value="faerrest">Færrest spillere først</option>
+        <option value="flest">Flest spillere først</option>
+        <option value="kort">Korteste spil først</option>
+        <option value="lang">Længste spil først</option>
+        <option value="favoritter">Favoritter</option>
+        <option value="navn">Navn A–Å</option>
+    </select>
+    
+</div>
+            <!-- Spillene indsættes her med JavaScript -->
+            <div id="products-container" class="products-container"></div>
+
+            
+
+
+
+
+        </main>
+    </div>
+
+<!-- Informationsboks til spil -->
+<dialog id="product-dialog" class="spil-dialog">
+
+    <button type="button" id="dialog-close" aria-label="Luk">
+        ×
+    </button>
+
+    <img id="dialog-image" class="dialog-image" alt="">
+
+    <h2 id="dialog-title"></h2>
+
+    <div id="dialog-rating"></div>
+
+    <div id="dialog-info"></div>
+
+</dialog>
+
+    <!-- JavaScript -->
+    <script src="data.js"></script>
+    <script src="scriptui.js"></script>
+    <script src="scriptfilt.js"></script>
+</body>
+</html>
